@@ -10,7 +10,7 @@ class Quotes:
          self.quote=quote
          
 
-class User(UserMixin,db.Model):
+class User(db.Model):
     __tablename__ = 'users'
 
     id = db.Column(db.Integer,primary_key = True)
@@ -22,7 +22,6 @@ class User(UserMixin,db.Model):
     profile_pic_path = db.Column(db.String())
     pass_secure = db.Column(db.String(255))
     password_hash = db.Column(db.String(255))
-    date_joined = db.Column(db.DateTime,default=datetime.utcnow)
     blogs = db.relationship('Blog', backref ='user', passive_deletes=True,lazy = "dynamic")
     comments = db.relationship('Comment', backref ='user' , passive_deletes=True,  lazy ="dynamic")
     
@@ -52,7 +51,6 @@ class User(UserMixin,db.Model):
 class Blog(db.Model):
     __tablename__ = 'blogs'
     id = db.Column(db.Integer, primary_key=True)
-    date = db.Column(db.DateTime, default=datetime.utcnow)
     title_blog = db.Column(db.String(255), index=True)
     description = db.Column(db.String(255), index=True)
     user_id = db.Column(db.Integer, db.ForeignKey('users.id',ondelete='CASCADE'), nullable=False)
@@ -77,7 +75,6 @@ class Comment(db.Model):
     comment = db.Column(db.Text())
     blog_id = db.Column(db.Integer, db.ForeignKey('blogs.id',ondelete='CASCADE'))
     user_id = db.Column(db.Integer, db.ForeignKey('users.id',ondelete='CASCADE'))
-    date = db.Column(db.DateTime, default=datetime.utcnow)
     def save_comment(self):
         db.session.add(self)
         db.session.commit()
