@@ -1,0 +1,15 @@
+{% extends 'bootstrap/base.html'%}
+<!-- <head> -->
+{% block styles %}
+{{ super() }}
+<link rel="stylesheet" href="{{url_for('static',filename='styles.css')}}">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
+<title>Blogs 2020</title>
+{% if title %}
+    <title> {{ title }}</title>
+    {% else %}
+    <title>Blogs 2020</title>
+    {% endif %}
+<!-- </head> -->
+{% endblock %}
