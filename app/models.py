@@ -1,5 +1,15 @@
 from . import db
 
+class Quotes:
+     
+     quote_list=[]
+
+
+     def __init__(self, author,quote):
+         self.author = author
+         self.quote=quote
+         
+
 class User(UserMixin,db.Model):
     __tablename__ = 'users'
 
