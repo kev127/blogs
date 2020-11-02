@@ -1,4 +1,4 @@
-from app.models import User,Blog
+from app.models import Comment,User,Blog
 from app import db
 from app import app
 import unittest
