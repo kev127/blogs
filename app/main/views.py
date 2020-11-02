@@ -10,6 +10,6 @@ def index():
     View root page function that returns the index page and its data
     '''
     Quote = get_Quotes()
-    title = 'Home -welcome to My Blogs'
+    title = 'Home -welcome to Blogs'
     
-    return render_template('index.html',title = title, blogQuote=blogQuote)
+    return render_template('index.html',title = title, Quote=Quote)
