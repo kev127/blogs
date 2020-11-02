@@ -1,0 +1,10 @@
+{% import 'bootstrap/wtf.html' as wtf %}
+{% extends 'base.html' %}
+{% block content%}
+<div class="container">
+    <div class="row">
+        <h2 style="font-size: 20px; align-items: center; color: rgb(29, 6, 92);">Add new blog</h2>
+        {{wtf.quick_form(form)}}
+    </div>
+</div>
+{% endblock %}
