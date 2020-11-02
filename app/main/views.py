@@ -1,7 +1,9 @@
 from flask import render_template,request,redirect,url_for
 from . import main
+from .forms import UpdateProfile, BlogForm, CommentForm
 from ..requests import get_Quotes
 from ..models import User, Blog,Comment
+from flask_login import login_required, current_user
 
 # Views
 @main.route('/')
