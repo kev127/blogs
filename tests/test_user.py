@@ -13,6 +13,5 @@ class UserModelTest(unittest.TestCase):
         with self.assertRaises(ArithmeticError):
             self.new_user.password
 
-
     def test_password_verfication(self):
         self.assertTrue(self.new_user.verify_password('mango'))     
