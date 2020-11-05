@@ -64,7 +64,7 @@ def update_pic(uname):
 @login_required
 def blogs():
     """
-    View Blog function that returns the BLog page and data
+    View Blog function that returns the Blog page and data
     """
     blog_form = BlogForm()
     if blog_form.validate_on_submit():
